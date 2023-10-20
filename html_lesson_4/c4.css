@@ -1,0 +1,19 @@
+.a1{
+    text-decoration: underline;
+    margin-left: 50%;
+}
+.a2{
+    display: flex;
+    margin-left: 40%;
+}
+th{
+    width: auto;
+}
+.b1{
+    background-color: orange;
+}
+a{
+    text-decoration: none;
+    margin-left: 40px;
+    color: rgb(112, 36, 36);
+}
