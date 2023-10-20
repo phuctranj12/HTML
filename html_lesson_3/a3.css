@@ -1,0 +1,23 @@
+body{
+    background-color:grey;
+}
+.main{
+    width: 400px;
+    border: black 2px solid;
+    padding-left:10px;
+    padding-right: 10px;
+    margin : 0px auto;
+    padding-top:10px;
+}
+.h{
+    margin-bottom: 10px;
+}
+.h label{
+    width:30%;
+    padding-right: 5px;
+    float: left;
+    text-align: left;
+}
+.h input,select{
+    
+}
