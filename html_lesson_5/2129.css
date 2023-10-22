@@ -1,0 +1,144 @@
+body{
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+}
+.header{
+    display: flex;
+    width: 100%;
+    background-image:url(https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D);
+}
+.header h2{
+    color: wheat;
+    margin-left: 10%;
+}
+.find{
+    margin-left: 200px;
+}
+.header input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:200px;
+    height: 18px;
+    background-color: rgb(193, 195, 191);
+}
+.header button{
+    background-color: brown;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.find2{
+    display: flex;
+    color: white;
+    margin-left:20px;
+    margin-top:30px;
+}
+.header p{
+    margin-left: 320px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+.menu{
+    width: 100%;
+    background-color: aliceblue;
+}
+.menu ul{
+    display: flex;
+    padding-left: 20%;
+}
+.menu ul li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+.mainall{
+    width:100%;
+    display: flex;
+}
+.mainl{
+    width: 8%;
+}
+.mainr{
+    width: 30%;
+    padding: 0px;
+}
+.mainr1{
+    width:calc(2*100%/3);
+    background-color: rgb(42, 38, 38);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.mainr1 p{
+    text-align: center;
+}
+.board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+}
+table,th{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    color: rgb(196, 192, 190);
+}
+th:hover{
+    color: red;
+}
+.main{
+    padding-top: 10px;
+    width:62%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+.main p{
+    padding-left: 20px;
+}
+.mainsort{
+    padding-top: 15px;
+    width:100%;
+    display: flex;
+}
+.main1{
+    width:20%;
+    padding-right: 5px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+h4{
+    color: white;
+    cursor: pointer;
+}
+h4:hover{
+    color :rgb(74, 74, 215)
+}
+.main1 img{
+    width:100%;
+}
+.p1{
+    display: flex;
+    padding-top: 14px;
+}
+.p1 img{
+   width:30%;
+   padding-right: 10px;
+}
+h5{
+    cursor: pointer;
+}
+h5:hover{
+    color:rgb(74, 74, 215);
+}
+li{
+cursor: pointer;
+}
+li:hover{
+    color: rgb(200, 52, 19);
+}

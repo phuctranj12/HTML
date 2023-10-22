@@ -1,0 +1,76 @@
+
+body{
+    margin :0px auto;
+    width: 100%;
+}
+.p1{
+    background-color:#84c7db;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+}
+.p1 h2{
+    color: rgb(44, 163, 44);
+}
+.chu{
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: rgb(121, 63, 174);
+}
+.h1{
+    width:70%;
+    text-align: left;
+}
+.h2{
+    width: 30%;
+    background-color: rgb(229, 177, 82);
+    margin-top: 0px;
+    height: 40px;
+    padding-top: 15px;
+    text-align: center;
+}
+.a1{
+    display: flex;
+}
+.header .h1 ul{
+display: flex;
+margin-top: 0px;
+height: 40px;
+padding-top: 15px;
+background-color: green;
+}
+.header .h1 ul li {
+    list-style-type: none;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+}
+.main{
+    display: flex;
+    width: 100%;
+}
+.main .m1{
+    width: 70%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.m1 img{
+    padding-top: 15px;
+    width: 100%;
+}
+.main .m2{
+    width: 30%;
+    padding-right: 10px;
+    text-align: left;
+    padding-left: 10px;}
+
+.main .m2 .m21 h3{
+    background-color: green;
+    color: white;
+    padding-left: 15px;
+}
+.main .m2 .m21 p{
+    padding-left: 15px;
+}
