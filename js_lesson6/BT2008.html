@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <link rel="stylesheet" ref="text/css" href="2008.css">
+    <body>
+    <script type="text/javascript">
+        var names = ["a", "b", "c", "d", "e", "f", "g", "h", "k", "i", "m", "l", "r", "p", "q", "w", "z", "x", "v", "m"];
+        function ngaunhien(min, max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        var arrst=[]
+        for(i =  1 ; i<=20;i++){
+            age = ngaunhien(18,30)
+            name = names[ngaunhien(0,19)]
+            address = 'Hanoi'
+            email = name + "@gmail.com"
+            var st = {
+                'name':name,
+                'age' : age,
+                'email': email,
+                'address':address
+            }
+            arrst.push(st)
+        }
+        function show(){
+            for(i = 0 ; i < arrst.length;i++){
+                document.write(`<tr><td>${i+1}</td>
+                    <td>${arrst[i].name}</td>
+                <td>${arrst[i].age}</td>
+                <td>${arrst[i].address}</td>
+                <td>${arrst[i].email}</td>
+    </tr>`)
+            }
+        }
+    </script>
+    <table border="1" >
+        <tr class="main">
+            <td>STT</td>
+            <td>Ten</td>
+            <td>Tuoi</td>
+            <td>Dia chi</td>
+            <td>Email</td>
+        </tr>
+        <script type="text/javascript">show()</script>
+    </table>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <body>
+
+    </body>
+    <script>
+        n = prompt('Nhap so n:')
+        var t = []
+        sum = 0
+        for( var i = 0; i <n ; i++){
+            t[i] = prompt("NHap phan tu t["+i+"]")
+            sum += parseInt(t[i])
+        }
+        for(var i = 0; i<n-1;i++){
+        for(var j = i+1 ; j<n;j++){
+            if(t[i]>t[j]){
+                tam = t[j]
+                t[j]= t[i]
+                t[i]= tam
+            }
+        }
+        }
+        alert( 'Mang sau khi xap xep la '+t)
+        alert('TOng cac phan tu trong mang la '+sum)
+    </script>
+</html>
