@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    border: 2px solid blue;
+}
+h3{
+    width: 100%;
+    color: white;
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.head{
+    background-color: rgb(76, 76, 138);
+}
+.p{
+    background-color: rgb(81, 165, 81);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.main{
+    display: flex;
+}

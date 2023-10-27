@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" ref="text/css" href="2019.css">
+    <body>
+        <div class="q1">
+            <div class = "head">Input production's detail information</div>
+        <div class="choose">
+            <label>Production Name</label>
+            <input id="1" type="text">
+        </div>
+        <div class="choose">
+            <label>Category Name</label>
+            <input id="2" type="text">
+        </div>
+        <div class="choose" >
+            <label> Price</label>
+            <input id="3" type="number" onkeyup="totalprice()">
+        </div>
+        <div class="choose" >
+            <label> Quantity</label>
+            <input id="4" type="number" onkeyup="totalprice()">
+        </div>
+        <div class="choose">
+            <label> Total Price</label>
+            <input id="5" disabled="true">
+        </div>
+        <div class="choose">
+            <label>Manufacturner Name</label>
+            <input id="6" type="text">
+        </div>
+        <div class = "m">
+            <div>&nbsp;</div>
+            <button onclick="Save()" style="color: white; background-color:rgb(109, 207, 109)">Add Product</button>
+            <button onclick="Reset()" style="color: white; background-color:rgb(217, 133, 55)">Reset</button>
+        </div>
+        </div>
+        <div class="q2">
+            <div class="managementproduct">Management Product</div>
+            <div class="table-sort">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Product Name</th>
+                            <th>Category Name</th>
+                            <th>Price</th>
+                            <th>Quanity</th>
+                            <th>Manufacturner Name</th>
+                            <th><button onclick="Edit()">Edit</button></th>
+                            <th><button onclick="Delete()">Delete</button></th>
+                        </tr>
+                    </thead>
+                    <tbody id="plus">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var tensanpham = document.getElementById('1')
+            var tennhanhieu = document.getElementById('2')
+            var gia = document.getElementById('3')
+            var soluong = document.getElementById('4')
+            var tonggia = document.getElementById('5')
+            var hang = document.getElementById('6')
+            var pluss=document.getElementById('plus')
+            var arr=[]
+            function totalprice(){
+                p1 = gia.value
+                p2 = soluong.value
+                tonggia.value= p1*p2
+            }
+            function Save(){
+                let tensp = tensanpham.value
+                let tennh = tennhanhieu.value
+                let price = gia.value
+                let amount = soluong.value
+                let totalprice = tonggia.value
+                let manuf = hang.value
+                arr.push({
+                    'tensp':tensp,
+                    'tennh':tennh,
+                    'price':price,
+                    'amount':amount,
+                    'manuf':manuf
+                })
+                console.log(arr)
+                show()
+            }
+            function show(){
+                // mỗi lần add sẽ reset pluss thành rỗng 
+                pluss.innerHTML='' 
+                for(var i = 0 ; i <arr.length;i++){
+                    pluss.innerHTML+=`<tr>
+                        <td>${i+1}</td>
+                    <td> ${arr[i].tensp}</td>
+                    <td> ${arr[i].tennh}</td>
+                    <td> ${arr[i].price}</td>
+                    <td> ${arr[i].amount}</td>
+                    <td> ${arr[i].manuf}</td>
+                    <th><button onclick="Edit()">Edit</button></th>
+                    <th><button onclick="Delete(${i})">Delete</button></th>
+                    </tr>`
+                }
+            }
+            function Reset(){
+                tensanpham.value=''
+                tennhanhieu.value=''
+                gia.value=''
+                soluong.value=''
+                tonggia.value=''
+                hang.value=''
+            }
+            function Delete(index){
+                arr.splice(index,1)
+                show()
+            }
+
+        </script>
+    </body>
+
+</html>
