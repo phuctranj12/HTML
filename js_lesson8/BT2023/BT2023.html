@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <link rel="stylesheet" ref="text/css" href="BT2023.css">
+    <body>
+        <div class="all">
+            <div class="header">
+                Purchase Order Form
+            </div>
+            <div class="main1">
+                <h4>Product Information</h4>
+                <div class="main11">
+                    <div class="pick">
+                        <label>Product:</label>
+                        <div class="choose">
+                            <input list="Dropdown1" oninput="updateprice()" placeholder="Select" id="dulieu1-id">
+                            <datalist id="Dropdown1">
+                                <option value="Comfort Sleeper">
+                                <option value="Morgan Kids Bed">
+                                <option value="Entertainment Cabinet">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="pick">
+                        <label>Unit Price:</label>
+                        <div class="choose"><input id="unitprice-id" disabled value="0"></div>
+                    </div>
+                    <div class="pick">
+                        <label>Quanity:</label>
+                        <div class="choose"><input type="number" disabled id="quanity-id" value="0" onkeyup="updatetotalprice()"></div>
+                    </div>
+                    <div class="pick">
+                        <label>Total Price:</label>
+                        <div class="choose"><input disabled value="0" id="totalprice-id"></div>
+                    </div>
+                </div>
+            </div>    <!-- main1 -->
+            
+            <div class="main1">
+                <h4>Shipping Information</h4>
+                <div class="main11">
+                    <div class="pick">
+                        <label>Full Name:</label>
+                        <div class="choose"><input></div>
+                    </div>
+                    <div class="pick">
+                        <label>Shipping Adress:</label>
+                        <div class="choose"><input style="height: 40px;"></div>
+                    </div>
+                    <div class="pick">
+                        <label>Credit Card:</label>
+                        <div class="choose">
+                            <input list="Dropdown2" placeholder="Select" oninput="cc()" id="c">
+                            <datalist id="Dropdown2">
+                                <option value="VISA"></option>
+                                <option value="Master Card"></option>
+                                <option value="American Express"></option>
+                        </div>
+                    </div>
+                    <div class="pick">
+                        <label>Creadit Card Number:</label>
+                        <div class="choose1">
+                            <input disabled id ="c1" oninput="checkinput(this)" maxlength="4">
+                            <input disabled id ="c2" oninput="checkinput(this)" maxlength="4">
+                            <input disabled id ="c3" oninput="checkinput(this)" maxlength="4">
+                            <input disabled id ="c4" oninput="checkinput(this)" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+                <div class="nut">
+                    <button onclick="Save()">Submit</button>
+                    <button onclick="xoa()">Reset</button>
+                </div>
+
+            </div> <!-- main1 -->
+
+        </div>        <!-- all -->
+        <div class="dialog" id="dialog-id">
+            <div class="dialog-content">
+                <div class="dialog-body">
+                    ĐƠN HÀNG CỦA BẠN ĐÃ ĐƯỢC TẠO
+                </div>
+                <div class="dialog-footer">
+                    <button onclick="closeDialog()">OK</button>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var sanpham = document.getElementById('dulieu1-id')
+            var gia = document.getElementById('unitprice-id')
+            var tonggia = document.getElementById('totalprice-id')
+            var soluong = document.getElementById('quanity-id')
+            var dialogTag = document.getElementById('dialog-id')
+            function updateprice(){
+                let name = sanpham.value
+                if(name=='Comfort Sleeper'){gia.value=650}
+                if(name=='Morgan Kids Bed'){gia.value=975}
+                if(name=='Entertainment Cabinet'){gia.value=480}
+                document.getElementById('quanity-id').disabled=false
+            }
+            function updatetotalprice(){
+                let p1 = gia.value
+                let p2 = soluong.value
+                tonggia.value=p1*p2
+            }
+            function cc(){
+                document.getElementById('c1').disabled=false
+                document.getElementById('c2').disabled=false
+                document.getElementById('c3').disabled=false
+                document.getElementById('c4').disabled=false
+
+            }
+            function checkinput(input){
+                input.value = input.value.replace(/\D/g, ''); // để loại bỏ tất cả các ký tự không phải số từ giá trị của input thay thế bằng phần tử rỗng
+                if (input.value.length > 4) {
+                input.value = input.value.slice(0, 4); // cắt các phần tử ngoài vị trí cho phép khi người dùng nhập từ bàn phím chỉ lấy 4 kí tự số đầu tiên 
+                }
+            }
+            function xoa(){
+                document.getElementById('c1').disabled=true
+                document.getElementById('c2').disabled=true
+                document.getElementById('c3').disabled=true
+                document.getElementById('c4').disabled=true
+                document.getElementById('quanity-id').disabled=true
+                document.getElementById('c1').value=''
+                document.getElementById('c2').value=''
+                document.getElementById('c3').value=''
+                document.getElementById('c4').value=''
+                document.getElementById('c').value=''
+                sanpham.value=''
+                gia.value='0'
+                tonggia.value='0'
+                soluong.value='0'
+            }
+            function Save(){
+                dialogTag.style.display="block"
+            }
+            function closeDialog() {
+                dialogTag.style.display = "none"
+            }
+        </script>
+    </body>
+</html>
